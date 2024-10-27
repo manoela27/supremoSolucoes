@@ -4,31 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supremo Soluções Ambientais</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <img id='mark' src="img/logo.png" alt="Logo com nome 'Supremo' em verde, escrito em uma fonte robusta e curvada, seguida pela frase 'Soluções em Engenharia' em letras menores, na cor verde claro. Abaixo do nome, há uma linha dupla em verde e laranja com um leve formato ondulado.">
-        <nav>
-            <ul>
-                <li><a href="index.html">Página inicial</a></li>
-                <li><a href="equipe.html">Serviços</a></li>
-                <li><a href="servicos.html">Clientes</a></li>
-                <li><a href="contato.html">Equipe</a></li>
-                <li><a href="redes-sociais.html">Contato</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <div class="d-flex justify-content-between w-100 pt-3 pb-3 align-items-center">
+                <img id='mark' src="img/logo.png" alt="Logo com nome 'Supremo' em verde, escrito em uma fonte robusta e curvada, seguida pela frase 'Soluções em Engenharia' em letras menores, na cor verde claro. Abaixo do nome, há uma linha dupla em verde e laranja com um leve formato ondulado.">
+                <nav>
+                    <ul class="d-flex">
+                        <li><a href="index.html">Página inicial</a></li>
+                        <li><a href="equipe.html">Serviços</a></li>
+                        <li><a href="servicos.html">Clientes</a></li>
+                        <li><a href="contato.html">Equipe</a></li>
+                        <li><a href="redes-sociais.html">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
 
     <main>
-        <section>
-            <h2>Serviços Oferecidos</h2>
-            <p>Descrição dos serviços oferecidos.</p>
+        <section id="service" class="service-information">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="w-50">
+                    <h1 class="service-title fw-bolder">
+                        Conheça nossos serviços
+                    </h1>
+                    <button class="button-service d-flex align-items-center justify-content-between mt-4">
+                        <span class="text-button">Conhecer</span>  
+                        <span class="material-icons">
+                            arrow_downward
+                        </span>
+                    </button>
+                </div>
+                <div class="service-content_describe">
+                    <p class="service-describe">
+                        Nossos serviços são guiados pela honestidade, transparência e respeito ao meio ambiente, garantindo soluções sustentáveis. Valorizamos a acessibilidade, proporcionando projetos inclusivos e éticos em todas as etapas.
+                    </p>
+                </div>
+            </div>
         </section>
+        <section id="serviceOption" class="service-option ">           
+        </section>
+
+        <section class="team">
+            <div class="container">
+                <h2 class="team-title"> Conheça <strong>Nossa equipe</strong></h2>
+
+                <div class="team-card_container" id="team-card-container">
+
+                </div>
+            </div>
+        </section>
+
+        <div class="modal fade" id="teamModal" tabindex="-1" role="dialog" aria-labelledby="teamModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="teamModalLabel">Informações do Membro da Equipe</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close-modal">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body d-flex justify-content-between">
+                        <div class="team-card">
+                            <img id="modal-foto">
+                        </div>
+                        <div class="d-flex align-items-center flex-column justify-content-center modal-information">
+                            <h3 id="modal-name" class="modal-name"></h3>
+                            <p id="modal-description" class="modal-description"></p>
+
+                        </div>
+                        
+                </div>
+            </div>
+        </div>
+        
     </main>
 
     <footer>
+        <section class="contact ">
+            <div class="container d-flex justify-content-between align-items-center">
+                <h1>
+                    ENTRE EM <strong>CONTATO</strong>
+                </h1>
+                <div class="forms">
+                    <div class="d-flex flex-column w-100">
+                        <label>Nome completo</label>
+                        <input type="text">
+                    </div>
+                    <div class="d-flex flex-column mt-4 w-100">
+                        <label>Escreva sua mensagem</label>
+                        <textarea type="text"></textarea>
+                    </div>
+                    <button class="button-service button-service-forms">Enviar</button>
+                </div>
+                
+
+            </div>
+            <div class="socialMedia d-flex justify-content-end">
+                <a href="">
+
+                </a>
+                tedte
+            </div>
+        </section>
         <p>&copy; 2024 Supremo Soluções Ambientais</p>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
     </footer>
 </body>
 </html>
