@@ -2,7 +2,12 @@
 *{
     font-family: 'inter';
 }
-
+@mixin md {
+    @media (min-width: 768px){
+      @content;
+    }
+  }
+  
 @font-face {
     font-family: 'Material Icons';
     font-style: normal;
@@ -60,9 +65,32 @@
     &-title{
         font-size: 50px;
         text-transform: uppercase;
+        text-align: center;
+
+        @include md{
+            text-align: start;
+        }
+       
     }
     &-content_describe{
-        max-width: 45%;
+        max-width: 100%;
+        margin-top: 24px;
+
+        @include md{
+            max-width: 45%;
+            margin-top: 0;
+        }
+        
+    }
+    &-content-title{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        @include md{
+            width: 50%;
+            display: block;
+        }
     }
     &-describe{
         font-size: 16px;
@@ -80,7 +108,12 @@
         }
 
         &_content{
-            max-width: 60%;
+            max-width: 100%;
+
+            @include md{
+                max-width: 60%;
+            }
+            
         }
         &_title{
             font-size: 30px;
@@ -240,6 +273,11 @@
     &-forms{
         justify-content: center;
         margin-top: 16px;
+        
+
+        &_submit{
+            max-width: 160px;
+        }
     }
 
     .text-button{
@@ -280,8 +318,3 @@
     }
 }
 
-  @media (min-width:1400px){
-    .container{
-      max-width: 1500px;
-    }
-  }

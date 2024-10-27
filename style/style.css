@@ -54,9 +54,33 @@ nav > ul li a {
 .service-title {
   font-size: 50px;
   text-transform: uppercase;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .service-title {
+    text-align: start;
+  }
 }
 .service-content_describe {
-  max-width: 45%;
+  max-width: 100%;
+  margin-top: 24px;
+}
+@media (min-width: 768px) {
+  .service-content_describe {
+    max-width: 45%;
+    margin-top: 0;
+  }
+}
+.service-content-title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .service-content-title {
+    width: 50%;
+    display: block;
+  }
 }
 .service-describe {
   font-size: 16px;
@@ -73,7 +97,12 @@ nav > ul li a {
   align-items: center;
 }
 .service-available_content {
-  max-width: 60%;
+  max-width: 100%;
+}
+@media (min-width: 768px) {
+  .service-available_content {
+    max-width: 60%;
+  }
 }
 .service-available_title {
   font-size: 30px;
@@ -220,6 +249,9 @@ nav > ul li a {
   justify-content: center;
   margin-top: 16px;
 }
+.button-service-forms_submit {
+  max-width: 160px;
+}
 .button-service .text-button {
   font-weight: 450;
   font-size: 16px;
@@ -251,12 +283,6 @@ nav > ul li a {
 .modal-body {
   padding-left: 24px;
   padding-right: 24px;
-}
-
-@media (min-width: 1400px) {
-  .container {
-    max-width: 1500px;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */

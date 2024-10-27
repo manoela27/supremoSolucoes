@@ -39,7 +39,7 @@ informacoes.forEach((info, index) => {
     const whatsappLink = `https://wa.me/SEU_NUMERO_DE_TELEFONE?text=${encodeURIComponent(whatsappText)}`;
 
     infoDiv.innerHTML = `
-        <div class=' container service-available-container'>
+        <div class=' container service-available-container flex-column flex-md-row w-100'>
             <div class='service-available_content'>
                 <h2 class="service-available_title fw-bold">${info.titulo}</h2>
                 <p class="service-available_describe">${info.descricao}</p>
@@ -110,4 +110,22 @@ container.addEventListener('click', function(event) {
 document.getElementById('close-modal').addEventListener('click', function() {
     const bootstrapModal = bootstrap.Modal.getInstance(modal);
     bootstrapModal.hide(); 
+});
+
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    var isValid = true;
+
+    this.querySelectorAll('input, textarea').forEach(function (input) {
+        if (!input.checkValidity()) {
+            isValid = false;
+            input.classList.add('is-invalid');
+        } else {
+            input.classList.remove('is-invalid');
+        }
+    });
+
+    if (isValid) {
+        alert('Formulário enviado com sucesso!');
+    }
 });
