@@ -1,5 +1,7 @@
 * {
   font-family: "inter";
+  scroll-behavior: smooth;
+  border-radius: 0;
 }
 
 @font-face {
@@ -30,6 +32,7 @@
 header {
   display: flex;
   width: 100%;
+  z-index: 999;
 }
 
 #mark {
@@ -38,14 +41,93 @@ header {
   flex: 0 0 200px;
 }
 
+nav > ul {
+  margin: 0;
+}
+
 nav > ul li {
   display: inline;
   margin: 0 16px;
 }
 
-nav > ul li a {
-  /*color: white;*/
+.nav-link {
+  color: white;
   text-decoration: none;
+}
+
+.container-header {
+  padding: 0px 48px;
+}
+
+.navbar {
+  margin-left: 32px;
+}
+
+.navbar-toggler {
+  background-color: #fff;
+  border: none !important;
+  padding: 4px;
+  box-shadow: none !important;
+}
+
+.navbar-collapse.show {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 6px 12px;
+}
+.navbar-collapse.show .nav-link {
+  color: #000 !important;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.home {
+  background-image: url("../img/bgMain.png");
+  height: 75vh;
+  background-size: cover;
+  background-position: center;
+}
+@media (min-width: 768px) {
+  .home {
+    background-position: inherit;
+  }
+}
+.home .container-home {
+  position: absolute;
+  bottom: 0;
+  padding: 0px 24px;
+  width: 100%;
+  padding-bottom: 24px;
+  padding-top: 16px;
+  background: linear-gradient(to bottom, rgba(2, 148, 39, 0) 0%, rgba(2, 148, 39, 0.5) 100%);
+}
+@media (min-width: 768px) {
+  .home .container-home {
+    padding: 0px 48px;
+    padding-bottom: 24px;
+    padding-top: 16px;
+  }
+}
+.home .container-home h1 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 30px;
+}
+@media (min-width: 768px) {
+  .home .container-home h1 {
+    font-size: 40px;
+  }
+}
+.home .container-home p {
+  color: #fff;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5rem;
+}
+@media (min-width: 768px) {
+  .home .container-home .content-info_home {
+    width: 50%;
+  }
 }
 
 .service-information {
@@ -128,6 +210,10 @@ nav > ul li a {
   text-transform: uppercase;
   text-align: center;
 }
+.team-title_low {
+  font-size: 30px;
+  margin: 0 auto;
+}
 .team-title strong {
   position: relative;
 }
@@ -156,6 +242,12 @@ nav > ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .team-card_container {
+    flex-direction: row;
+  }
 }
 .team-card img {
   height: 420px;
@@ -175,6 +267,19 @@ nav > ul li a {
   font-size: 18px;
 }
 
+.close {
+  border-radius: 100px;
+  background-color: #000;
+  border: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.close span {
+  line-height: 0;
+  color: #fff;
+}
+
 .contact {
   background-color: #159C7E;
   padding-top: 40px;
@@ -189,12 +294,17 @@ nav > ul li a {
   font-weight: 900;
 }
 .contact .forms {
-  width: 60%;
+  width: 100%;
   padding: 0px 32px;
   display: flex;
   align-items: end;
   flex-direction: column;
   margin-bottom: 30px;
+}
+@media (min-width: 768px) {
+  .contact .forms {
+    width: 60%;
+  }
 }
 .contact .forms label {
   color: #fff;
@@ -238,7 +348,7 @@ nav > ul li a {
   color: #fff;
   padding: 4px 16px;
   height: 40px;
-  min-width: 160px;
+  max-width: 160px;
   border: none;
   text-decoration: none;
   align-items: center;
@@ -248,6 +358,14 @@ nav > ul li a {
 .button-service-forms {
   justify-content: center;
   margin-top: 16px;
+  min-width: 160px;
+  max-width: 190px;
+  margin-bottom: 48px;
+}
+@media (min-width: 768px) {
+  .button-service-forms {
+    margin-bottom: 0;
+  }
 }
 .button-service-forms_submit {
   max-width: 160px;
@@ -257,13 +375,22 @@ nav > ul li a {
   font-size: 16px;
 }
 
-.modal {
-  top: -50%;
-  transform: translateY(75%);
+@media (min-width: 768px) {
+  .modal {
+    top: -50%;
+    transform: translateY(75%);
+  }
 }
 .modal-dialog {
   max-width: 900px;
   margin: 0 auto;
+}
+.modal-header {
+  border: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  margin-top: 24px;
 }
 .modal-content {
   background-color: #D9D9D9 !important;
@@ -278,7 +405,14 @@ nav > ul li a {
   text-align: center;
 }
 .modal-information {
-  width: 60%;
+  width: 100%;
+  margin-top: 32px;
+}
+@media (min-width: 768px) {
+  .modal-information {
+    width: 60%;
+    margin-top: 0;
+  }
 }
 .modal-body {
   padding-left: 24px;

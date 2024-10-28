@@ -1,6 +1,8 @@
 //sass --watch style/style.scss style/style.css
 *{
     font-family: 'inter';
+    scroll-behavior: smooth;
+    border-radius: 0;
 }
 @mixin md {
     @media (min-width: 768px){
@@ -41,6 +43,7 @@
   header{
     display: flex;
     width: 100%;
+    z-index: 999;
   }
   
   #mark{
@@ -48,15 +51,93 @@
     object-fit: contain;
     flex: 0 0 200px;
   }
+  nav > ul {
+    margin: 0 ;
+    
+  }
   
   nav > ul li{
     display: inline;
     margin: 0 16px;
   }
   
-  nav > ul li a{
-    /*color: white;*/
+  .nav-link{
+    color: white;
     text-decoration: none;
+  }
+  .container-header{
+    padding: 0px 48px;
+  }
+
+  .navbar{
+
+    margin-left: 32px;
+  }
+  .navbar-toggler{
+    background-color: #fff;
+    border: none !important;
+    padding: 4px;
+
+    box-shadow: none !important;
+  }
+  .navbar-collapse.show {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 6px 12px;
+
+    .nav-link{
+        color: #000 !important;
+        font-size: 14px;
+        font-weight: 700;
+    }
+  }
+  .home{
+    background-image:url('../img/bgMain.png');
+    height: 75vh;
+    background-size: cover;
+    background-position: center;
+
+    @include md{
+        background-position: inherit;
+    }
+
+
+    .container-home{
+        position: absolute;
+        bottom:0;
+        padding: 0px 24px;
+        width: 100%;
+        padding-bottom: 24px;
+        padding-top: 16px;
+        background: linear-gradient(to bottom, rgba(2, 148, 39, 0) 0%, rgba(2, 148, 39, 0.5) 100%);
+
+        @include md{
+            padding: 0px 48px;
+            padding-bottom: 24px;
+            padding-top: 16px;
+        }
+        h1{
+            color: #fff;
+            font-weight: 600;
+            font-size: 30px;
+
+            @include md{
+                font-size: 40px; 
+            }
+        }
+        p{
+            color: #fff;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 1.5rem;
+        }
+        .content-info_home{
+            @include md{
+                width: 50%;    
+            }
+
+        }
+    }
   }
   .service{
     &-information{
@@ -140,6 +221,11 @@
         text-transform: uppercase;
         text-align: center;
 
+        &_low{
+            font-size: 30px;
+            margin: 0 auto;
+            
+        }
         strong{
             position: relative;
 
@@ -164,6 +250,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+
+            @include md{
+                flex-direction: row;
+            }
         }
 
         background-color: #159c7f1a;
@@ -194,6 +285,18 @@
     }
 }
 
+.close{
+    border-radius: 100px;
+    background-color: #000;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    span{
+        line-height: 0;
+        color: #fff;
+    }
+}
   .contact{
     background-color: #159C7E;
     padding-top: 40px;
@@ -209,13 +312,16 @@
         font-weight: 900;
     }
     .forms{
-        width: 60%;
+        width: 100%;
         padding: 0px 32px;
         display: flex;
         align-items: end;
         flex-direction: column;
         margin-bottom: 30px;
 
+        @include md{
+            width: 60%;
+        }
 
         label{
             color: #fff;
@@ -263,7 +369,7 @@
     color: #fff;
     padding: 4px 16px;
     height: 40px;
-    min-width: 160px;
+    max-width: 160px;
     border: none;
     text-decoration: none;
     align-items: center;
@@ -273,7 +379,13 @@
     &-forms{
         justify-content: center;
         margin-top: 16px;
-        
+        min-width: 160px;
+        max-width: 190px;
+        margin-bottom: 48px;
+
+        @include md{
+            margin-bottom: 0;
+        }
 
         &_submit{
             max-width: 160px;
@@ -289,13 +401,23 @@
   
 
 .modal{
-    top: -50%;
-    transform: translateY(75%);
+    @include md{
+        top: -50%;
+        transform: translateY(75%);
+    }
+
     
     &-dialog{
         max-width: 900px;
-        
         margin:0 auto;
+
+    }
+    &-header{
+        border: none;
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+        margin-top: 24px;
     }
     &-content{
         background-color: #D9D9D9!important;
@@ -310,7 +432,12 @@
         text-align: center;
     }
     &-information{
-        width: 60%;
+        width: 100%;
+        margin-top: 32px;
+        @include md{
+            width: 60%;
+            margin-top: 0;
+        }
     }
     &-body{
         padding-left: 24px;

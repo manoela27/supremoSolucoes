@@ -11,36 +11,65 @@
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="d-flex justify-content-between w-100 pt-3 pb-3 align-items-center">
+    <header class="position-absolute">
+        <div class="container-header">
+            <div class="d-flex w-100 pt-3 pb-3 align-items-md-center align-items-start">
                 <img id='mark' src="img/logo.png" alt="Logo com nome 'Supremo' em verde, escrito em uma fonte robusta e curvada, seguida pela frase 'Soluções em Engenharia' em letras menores, na cor verde claro. Abaixo do nome, há uma linha dupla em verde e laranja com um leve formato ondulado.">
-                <nav>
-                    <ul class="d-flex">
-                        <li><a href="index.html">Página inicial</a></li>
-                        <li><a href="equipe.html">Serviços</a></li>
-                        <li><a href="servicos.html">Clientes</a></li>
-                        <li><a href="contato.html">Equipe</a></li>
-                        <li><a href="redes-sociais.html">Contato</a></li>
-                    </ul>
-                </nav>
+                <nav class="navbar navbar-expand-lg ">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#home">Página inicial</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#service">Serviços</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="servicos.html">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#team">Equipe</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#contact">Contato</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                  
             </div>
         </div>
     </header>
 
     <main>
+        <section class="home position-relative" id="home">
+            <div class="container-home">
+                <div class="content-info_home">
+                    <h1>
+                        Transformando o Futuro com Sustentabilidade
+                    </h1>
+                    <p>
+                        Oferecemos serviços especializados em sustentabilidade e gestão ambiental para empresas comprometidas com o meio ambiente. Nossa equipe atua em projetos de consultoria, preservação e recuperação de áreas degradadas. Juntos, promovemos práticas responsáveis para um futuro mais verde e sustentável.
+                    </p>
+                </div>
+            </div>
+
+        </section>
         <section id="service" class="service-information">
             <div class="container d-flex justify-content-md-between justify-content-center align-items-center flex-column flex-md-row w-100">
                 <div class="service-content-title">
                     <h1 class="service-title fw-bolder">
                         Conheça nossos serviços
                     </h1>
-                    <button class="button-service d-flex align-items-center justify-content-between mt-4">
+                    <a class="button-service d-flex align-items-center justify-content-between mt-4" href="#topograph">
                         <span class="text-button">Conhecer</span>  
                         <span class="material-icons">
                             arrow_downward
                         </span>
-                    </button>
+                    </a>
                 </div>
                 <div class="service-content_describe">
                     <p class="service-describe">
@@ -52,7 +81,7 @@
         <section id="serviceOption" class="service-option ">           
         </section>
 
-        <section class="team">
+        <section class="team" id="team">
             <div class="container">
                 <h2 class="team-title"> Conheça <strong>Nossa equipe</strong></h2>
 
@@ -66,17 +95,19 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="teamModalLabel">Informações do Membro da Equipe</h5>
+                        <h2 class="team-title team-title_low"> Conheça <strong id="modal-name">Nossa equipe</strong>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close-modal">
-                            <span aria-hidden="true">&times;</span>
+                            <span class="material-icons">
+                                close
+                            </span>
                         </button>
                     </div>
-                    <div class="modal-body d-flex justify-content-between">
+                    <div class="modal-body d-flex justify-content-between flex-column flex-md-row">
                         <div class="team-card">
                             <img id="modal-foto">
                         </div>
                         <div class="d-flex align-items-center flex-column justify-content-center modal-information">
-                            <h3 id="modal-name" class="modal-name"></h3>
+                            <h3 id="modal-nome" class="modal-name"></h3>
                             <p id="modal-description" class="modal-description"></p>
 
                         </div>
@@ -88,8 +119,8 @@
     </main>
 
     <footer>
-        <section class="contact">
-            <div class="container d-flex justify-content-between align-items-center">
+        <section class="contact" id="contact">
+            <div class="container d-flex justify-content-between align-items-center flex-column flex-md-row">
                 <h1>
                     ENTRE EM <strong>CONTATO</strong>
                 </h1>
@@ -116,10 +147,8 @@
             </div>
             <div class="socialMedia d-flex justify-content-end">
                 <a href="" aria-label="Link para redes sociais">Social Media</a>
-                tedte
             </div>
         </section>
-        <p>&copy; 2024 Supremo Soluções Ambientais</p>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="script.js"></script>
     </footer>

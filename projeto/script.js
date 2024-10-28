@@ -64,6 +64,7 @@ const teamMembers = [
     },
     { nome: "Anderson Santos Camargo", cargo: "Proprietário",
         foto:"img/anderson.png",
+        descricao:"Formado em Engenharia Civil pela Universidade do Oeste Paulista (UNOESTE) em 2014, com formação técnica em Agrimensura pela ETEC Professor Eufrásio de Toledo (2013) e graduação em Gestão Empresarial pela FATEC de Presidente Prudente (2018). Com uma sólida base acadêmica e conhecimentos práticos nas áreas de engenharia, agrimensura e gestão, possui uma visão integrada para atuar em projetos que combinam técnicas avançadas e administração eficiente."
     }
 ];
 
@@ -82,6 +83,7 @@ teamMembers.forEach(member => {
             data-name="${member.nome}" 
             data-descricao="${member.descricao}"
             data-foto="${member.foto}"
+            data-nome="${member.nome}" 
             >
             Mais informações
         </button>
@@ -93,14 +95,16 @@ const modal = document.getElementById('teamModal');
 const modalName = document.getElementById('modal-name');
 const modalDescription = document.getElementById('modal-description');
 const modalFoto = document.getElementById('modal-foto');
-
+const modalNome = document.getElementById('modal-nome');
 container.addEventListener('click', function(event) {
     if (event.target.classList.contains('button-service-forms')) {
         const name = event.target.getAttribute('data-name');
         const descricao = event.target.getAttribute('data-descricao');
         const foto = event.target.getAttribute('data-foto');
+        const nome = event.target.getAttribute('data-nome');
 
         modalName.textContent = name;
+        modalNome.textContent = nome;
         modalDescription.textContent = descricao;
         modalFoto.src = foto;
         const bootstrapModal = new bootstrap.Modal(modal);
